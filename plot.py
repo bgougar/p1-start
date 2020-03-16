@@ -5,7 +5,10 @@ import sys
 filename = raw-data/Sp15_245L_sect-001_group-1_glass.raw        # Stores ARG1 in filename, as in: $ python plot.py ARG1 ARG2 
 data = np.loadtxt(filename)   # Attempts to load filename into local variable data.
 data = np.loadtxt(filename,skiprows=32,delimiter=',')
-plt.plot(data[0],data[7])
+plt.plot(data[3],data[7])
+plt.xlabel("Strain [Ext %]")
+plt.ylabel("Stress [MPa]")
+
 plt.show()
 
 ## Part 0
