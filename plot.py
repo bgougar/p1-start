@@ -2,14 +2,19 @@ import matplotlib.pyplot as plt
 import numpy as np
 import sys
 
-filename = raw-data/Sp15_245L_sect-001_group-1_glass.raw        # Stores ARG1 in filename, as in: $ python plot.py ARG1 ARG2 
-# Attempts to load filename into local variable data.
-data = np.loadtxt(filename,skiprows=32,delimiter=',')
-plt.plot(data[3],data[7])
-plt.xlabel("Strain [Ext %]")
-plt.ylabel("Stress [MPa]")
+glass_raw = "raw-data/Sp15_245L_sect-001_group-1_glass.raw"
+ultem_raw = "raw-data/Sp15_245L_sect-001_group-1_ultem.raw"
+steel_raw = "raw-data/Sp15_245L_sect-001_group-2-4_bendtest-steel.raw"
+aluminum_raw = "raw-data/Sp15_245L_sect-001_group-2-4_bendtest-aluminum.raw"
+tungstem_raw = "raw-data/Sp15_245L_sect-001_group-2-4_bendtest-tungsten.raw"
 
-plt.show()
+filename = 
+data = np.loadtxt(filename,skiprows=32,delimiter=',')
+plt.plot(data[3],data[7],'b')
+plt.grid(True)
+plt.xlabel("Strain [Ext %]")
+plt.ylabel("Stress [MPa]")l
+plt.draw()
 
 ## Part 0
 # Figure out what arguments to add to the loadtxt function call
