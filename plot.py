@@ -21,6 +21,7 @@ plt.title(filename)
 plt.grid(True)
 plt.xlabel("Strain [Ext %]")
 plt.ylabel("Stress [MPa]")
+plt.legend("Young's Modulus: ",slope,loc="best")
 
 plt.show()
 
