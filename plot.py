@@ -8,13 +8,20 @@ steel_raw = "raw-data/Sp15_245L_sect-001_group-2-4_bendtest-steel.raw"
 aluminum_raw = "raw-data/Sp15_245L_sec-001_group-01_bendtest-aluminum.raw"
 tungsten_raw = "raw-data/Sp15_245L_sec-001_group-01_bendtest-tungsten.raw"
 
-filename = aluminum_raw
+filename = glass_raw
 data = np.loadtxt(filename,skiprows=32,delimiter=',')
-plt.plot(data[3],data[7],'b--')
+x = data[3]
+y = data[7]
+
+slope = np.polyfit(x,y,1) 
+poly1d_youngs = np.poly1d(slope)
+plt.plot(x,y,'b',x,poly1d_youngs(x),'--g')
+
 plt.title(filename)
 plt.grid(True)
 plt.xlabel("Strain [Ext %]")
 plt.ylabel("Stress [MPa]")
+
 plt.show()
 
 ## Part 0
