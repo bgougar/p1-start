@@ -15,13 +15,15 @@ y = data[7]*-1
 
 slope = np.polyfit(x,y,1) 
 poly1d_youngs = np.poly1d(slope)
-plt.plot(x,y,'b',x,poly1d_youngs(x),'--g')
+fig, ax = plt.plot(x,y,'b',x,poly1d_youngs(x),'--g')
 
 plt.title(filename)
 plt.grid(True)
 plt.xlabel("Strain [Ext %]")
 plt.ylabel("Stress [MPa]")
-plt.legend("Young's Modulus: ",slope,loc="best")
+
+ax.text(0.05, 0.95, slope, transform=ax.transAxes, fontsize=14,
+        verticalalignment='top')
 
 plt.show()
 
