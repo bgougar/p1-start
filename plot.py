@@ -5,16 +5,17 @@ import sys
 glass_raw = "raw-data/Sp15_245L_sect-001_group-1_glass.raw"
 ultem_raw = "raw-data/Sp15_245L_sect-001_group-1_ultem.raw"
 steel_raw = "raw-data/Sp15_245L_sect-001_group-2-4_bendtest-steel.raw"
-aluminum_raw = "raw-data/Sp15_245L_sect-001_group-2-4_bendtest-aluminum.raw"
-tungstem_raw = "raw-data/Sp15_245L_sect-001_group-2-4_bendtest-tungsten.raw"
+aluminum_raw = "raw-data/Sp15_245L_sec-001_group-01_bendtest-aluminum.raw"
+tungsten_raw = "raw-data/Sp15_245L_sec-001_group-01_bendtest-tungsten.raw"
 
-filename = 
+filename = aluminum_raw
 data = np.loadtxt(filename,skiprows=32,delimiter=',')
-plt.plot(data[3],data[7],'b')
+plt.plot(data[3],data[7],'b--')
+plt.title(filename)
 plt.grid(True)
 plt.xlabel("Strain [Ext %]")
-plt.ylabel("Stress [MPa]")l
-plt.draw()
+plt.ylabel("Stress [MPa]")
+plt.show()
 
 ## Part 0
 # Figure out what arguments to add to the loadtxt function call
