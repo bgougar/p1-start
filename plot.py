@@ -6,10 +6,14 @@ import sys
 glass_raw = "raw-data/Sp15_245L_sect-001_group-1_glass.raw"
 ultem_raw = "raw-data/Sp15_245L_sect-001_group-1_ultem.raw"
 steel_raw = "raw-data/Sp15_245L_sect-001_group-2-4_bendtest-steel.raw"
-aluminum_raw = "raw-data/Sp15_245L_sec-001_group-01_bendtest-aluminum.raw"
-tungsten_raw = "raw-data/Sp15_245L_sec-001_group-01_bendtest-tungsten.raw"
+aluminum_spec_1 = "raw-data/aluminum.raw"
+aluminum_spec_2 = "raw-data/aluminum_2.raw"
+aluminum_spec_3 = "raw-data/aluminum_3.raw"
+tungsten_spec_1 = "raw-data/tungsten.raw"
+tungsten_spec_2 = "raw-data/tungsten_2.raw"
+tungsten_spec_3 = "raw-data/tungsten_3.raw"
 
-filename = aluminum_raw
+filename = aluminum_spec_1
 data = np.loadtxt(filename,skiprows=32,delimiter=',')
 x = data[3]*-1
 y = data[7]*-1
