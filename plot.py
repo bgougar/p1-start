@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib.widgets import TextBox
 import sys
 
 glass_raw = "raw-data/Sp15_245L_sect-001_group-1_glass.raw"
@@ -13,26 +12,26 @@ tungsten_spec_1 = "raw-data/tungsten.raw"
 tungsten_spec_2 = "raw-data/tungsten_2.raw"
 tungsten_spec_3 = "raw-data/tungsten_3.raw"
 
-filename = aluminum_spec_1
+filename = sys.argv[1] 
 data = np.loadtxt(filename,skiprows=32,delimiter=',')
 x = data[3]*-1
 y = data[7]*-1
 
 slope = np.polyfit(x,y,1) 
 poly1d_youngs = np.poly1d(slope)
-fig, ax = plt.plot(x,y,'b',x,poly1d_youngs(x),'--k')
+plt.plot(x,poly1d_youngs(x),'--k',label = 'fit')
+plt.plot(x,y,'b',label = 'data')
 
 plt.title(filename)
 plt.grid(True)
 plt.xlabel("Strain [Ext %]")
 plt.ylabel("Stress [MPa]")
-plt.legend('Youngs Modulus', loc='best')
+plt.legend(loc='best')
 
-# ax.TextBox(0.05, 0.95, "'Young's Modulus = {} MPa'.format(slope[0])", transform=ax.transAxes, fontsize=14,
-#        verticalalignment='top')
+plt.text(5000, 100000 , "Young's Modulus = {:.3f} MPa".format(slope[0]))
 
+plt.savefig(filename+".png")
 plt.show()
-plt.savefig(filename)
 
 
 ## Part 0
