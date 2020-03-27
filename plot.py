@@ -22,6 +22,7 @@ plt.title(filename)
 plt.grid(True)
 plt.xlabel("Strain [Ext %]")
 plt.ylabel("Stress [MPa]")
+plt.legend('Youngs Modulus', loc='best')
 
 # ax.TextBox(0.05, 0.95, "'Young's Modulus = {} MPa'.format(slope[0])", transform=ax.transAxes, fontsize=14,
 #        verticalalignment='top')
