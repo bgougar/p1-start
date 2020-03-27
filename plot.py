@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+from matplotlib.widgets import TextBox
 import sys
 
 glass_raw = "raw-data/Sp15_245L_sect-001_group-1_glass.raw"
@@ -22,10 +23,12 @@ plt.grid(True)
 plt.xlabel("Strain [Ext %]")
 plt.ylabel("Stress [MPa]")
 
-#ax.text(0.05, 0.95, slope, transform=ax.transAxes, fontsize=14,
+# ax.TextBox(0.05, 0.95, "'Young's Modulus = {} MPa'.format(slope[0])", transform=ax.transAxes, fontsize=14,
 #        verticalalignment='top')
 
 plt.show()
+plt.savefig(filename)
+
 
 ## Part 0
 # Figure out what arguments to add to the loadtxt function call
